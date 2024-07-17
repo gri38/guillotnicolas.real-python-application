@@ -37,8 +37,10 @@ It helps to keep your Python environment clean and isolated from other projects.
     Your prompt will be prefixed with `(venv)` to indicate that the virtual environment is active.
 * Install the package by running the following command:
   ```bash
-  pip install -i https://test.pypi.org/simple/ guillotnicolas-real-python-application
+  pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ guillotnicolas-real-python-application
   ```
+  *N.B.: why this complex command? Because the package is not published on the official Python Package Index (PyPI).*  
+  *And I don't want to pollute the official index with a package that is not intended for public use.*  
 
 ## Usage
 If you exited the virtual environment, reactivate it by running the following command from the temporary folder you created earlier:
