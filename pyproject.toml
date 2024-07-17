@@ -19,7 +19,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "windows-curses",
+    "windows-curses; sys_platform == 'win32'",
 ]
 dynamic = ["version"]
 
