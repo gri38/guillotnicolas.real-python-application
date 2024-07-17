@@ -8,7 +8,7 @@ This project aims to showcase an original and Pythonic way of **applying for Rea
 
 In the spirit of your offer, I wanted to apply with a first tutorial: this README will guide you through the installation and execution of the scripts provided in this package.
 
-**By following this tutorial, you will get to know me better**, as each step will reveal a bit of my personality and passion for Python. I hope you'll enjoy this *experience*!
+**By following this tutorial, you will get to know me better**, as each step will reveal a bit of my personality and passion for Python. I hope you'll enjoy this "experience"!
 
 ## Installation
 
