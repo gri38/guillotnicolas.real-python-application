@@ -19,6 +19,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "windows-curses;platform_system=='Windows'",
 ]
 dynamic = ["version"]
 
@@ -29,3 +30,7 @@ version_scheme = "release-branch-semver"
 homepage = "https://github.com/gri38/guillotnicolas.real-python-application"
 documentation = "https://github.com/gri38/guillotnicolas.real-python-application/blob/main/README.md"
 repository = "https://github.com/gri38/guillotnicolas.real-python-application"
+
+[project.scripts]
+cover = "guillotnicolas.application.me:main"
+this = "guillotnicolas.application.this:main"
