@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "setuptools_scm[toml]>=6.2"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guillotnicolas-real-python-application"
+authors = [
+    { name = "gri38", email = "onzeweb@zaclys.net" },
+]
+description = "A way to apply to real python, I hope you enjoy it."
+readme = "README.md"
+requires-python = ">=3"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+dynamic = ["version"]
+
+[tool.setuptools_scm]
+version_scheme = "release-branch-semver"
+
+[project.urls]
+homepage = "https://github.com/gri38/guillotnicolas.real-python-application"
+documentation = "https://github.com/gri38/guillotnicolas.real-python-application/blob/main/README.md"
+repository = "https://github.com/gri38/guillotnicolas.real-python-application"

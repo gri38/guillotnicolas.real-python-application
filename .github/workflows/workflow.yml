@@ -3,7 +3,7 @@ name: package
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - '*.*.*'
       
 jobs:
   pypi-publish:
@@ -28,7 +28,12 @@ jobs:
         id: tag
         uses: little-core-labs/get-git-tag@v3.0.2
         with:
-          tagRegex: v(.*) 
+          tagRegex: (.*)
+
+      - name: Build package
+        run: |
+          python -m build --no-isolation
+          echo "Package was built in version [${{ steps.tag.outputs.tag }}"
 
       - name: Publish package distributions to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1.9.0
