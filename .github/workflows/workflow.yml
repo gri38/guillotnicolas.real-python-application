@@ -1,1 +1,37 @@
+name: package
 
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+      
+jobs:
+  pypi-publish:
+    name: upload release to PyPI test
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Get git tag
+        id: tag
+        uses: little-core-labs/get-git-tag@v3.0.2
+        with:
+          tagRegex: v(.*) 
+
+      - name: Publish package distributions to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1.9.0
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          
